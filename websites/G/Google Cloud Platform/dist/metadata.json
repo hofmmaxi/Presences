@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schemas.premid.app/metadata/1.0",
+    "author": {
+        "name": "Claxi ist toll <3",
+        "id": "463044315007156224"
+    },
+    "contributors": [
+        {
+            "name": "derMaxi",
+            "id": "428119121423761410"
+        }
+    ],
+    "service": "Google Cloud Platform",
+    "description": {
+        "en": "Google Cloud Platform, offered by Google, is a suit of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. It provides services like computing, data storage, data analytics and machiene learning.",
+        "de": "Die Google Cloud Platform, die von Google angeboten wird, ist eine Reihe von Cloud-Computing-Diensten, die auf der gleichen Infrastruktur laufen, die auch Google selbst intern für seine Endbenutzerprodukte verwendet. Die Platform bietet eine Reihe von modularen Diensten wie Computing, Datenspeicherung, Datenanalyse und Maschienelles Lernen."
+    },
+    "url": [
+        "cloud.google.com",
+        "console.cloud.google.com"
+    ],
+    "version": "1.0.0",
+    "logo": "https://i.imgur.com/RG5kVdf.png",
+    "thumbnail": "https://i.imgur.com/GkQMW25.jpg",
+    "color": "#FFFFFF",
+    "tags": ["google-cloud-platoform", "google", "cloud"],
+    "category": "other",
+    "settings": [
+        {
+            "id": "stamp",
+            "title": "Show Time Elapsed",
+            "icon": "fas fa-clock",
+            "value": true
+        },
+        {
+            "id": "prname",
+            "title": "Show Project Name",
+            "icon": "fas fa-file-signature",
+            "value": false
+        }
+    ]
+}
