@@ -1,16 +1,18 @@
 {
+  "$schema": "https://schemas.premid.app/metadata/1.0",
   "author": {
     "name": "Tepiloxtl",
     "id": "085733181730332672"
   },
-  "url": "radio.garden",
-  "description": {
-    "en": "By bringing distant voices close, radio connects people and places. Radio Garden allows listeners to tune into live radio across entire globe."
-  },
   "service": "Radio Garden",
-  "version": "1.2.5",
-  "logo": "https://vikavo.lt/premidpresence/radiogardenglobe.webp",
-  "thumbnail": "https://vikavo.lt/premidpresence/radiogardenthumb.png",
+  "description": {
+    "en": "By bringing distant voices close, radio connects people and places. Radio Garden allows listeners to tune into live radio across entire globe.",
+    "nl": "Door verre stemmen dichtbij te brengen, verbindt radio mensen en plaatsen. Met Radio Garden kunnen luisteraars afstemmen op live-radio over de hele wereld."
+  },
+  "url": "radio.garden",
+  "version": "2.0.2",
+  "logo": "https://i.imgur.com/Q2l6Bw8.png",
+  "thumbnail": "https://i.imgur.com/4Zzi2Lv.png",
   "color": "#0DF675",
   "tags": [
     "radio",
@@ -18,5 +20,5 @@
     "global",
     "media"
   ],
-  "category": "socials"
+  "category": "music"
 }

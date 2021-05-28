@@ -15,34 +15,54 @@ function getAuthorString(): string {
 
   //* Author tags more than one => YouTube Music Song listing with release year etc.
   if (authors.length > 1) {
-    //* Get release year of song
-    let year = document.querySelector(
-      "span yt-formatted-string.ytmusic-player-bar"
-    ).textContent;
-    year = year.slice(year.length - 4, year.length);
-
     //* Convert to js array for .map function
     authorsArray = Array.from(authors);
 
-    //* Build output string
-    authorString = `${authorsArray
-      .slice(0, authorsArray.length - 1)
-      .map((a) => a.innerText)
-      .join(", ")} - ${
-      authorsArray[authorsArray.length - 1].innerText
-    } (${year})`;
+    //* If song is from a channel and not a video
+    if (
+      document.querySelector(
+        'span yt-formatted-string.ytmusic-player-bar a[href*="channel/"]'
+      ) &&
+      !document.querySelector("ytmusic-player-page[video-mode_]")
+    ) {
+      //* Get release year of song
+      let year = document.querySelector(
+        "span yt-formatted-string.ytmusic-player-bar"
+      ).textContent;
+      year = year.slice(year.length - 4, year.length);
+
+      //* Build output string
+      authorString = `${authorsArray
+        .slice(0, authorsArray.length - 1)
+        .map((a) => a.innerText)
+        .join(", ")} - ${
+        authorsArray[authorsArray.length - 1].innerText
+      } (${year})`;
+    }
+    //* Else, the song is a user upload
+    else {
+      //* Build output string
+      authorString = `${authorsArray
+        .slice(0, authorsArray.length - 1)
+        .map((a) => a.innerText)
+        .join(", ")} - ${authorsArray[authorsArray.length - 1].innerText}`;
+    }
   }
   //* If from default YouTube music return Uploader
   else
     authorString = (document.querySelector(
       "span yt-formatted-string.ytmusic-player-bar a"
     ) as HTMLAnchorElement)
-      ? (document.querySelector(
-          "span yt-formatted-string.ytmusic-player-bar a"
-        ) as HTMLAnchorElement).innerText
-      : (document.querySelector(
-          "span yt-formatted-string.ytmusic-player-bar span:nth-child(1)"
-        ) as HTMLAnchorElement).innerText;
+      ? (
+          document.querySelector(
+            "span yt-formatted-string.ytmusic-player-bar a"
+          ) as HTMLAnchorElement
+        ).innerText
+      : (
+          document.querySelector(
+            "span yt-formatted-string.ytmusic-player-bar span:nth-child(1)"
+          ) as HTMLAnchorElement
+        ).innerText;
 
   return authorString;
 }
@@ -62,9 +82,9 @@ function getTimestamps(
 }
 
 presence.on("UpdateData", async () => {
-  const title = (document.querySelector(
-      ".ytmusic-player-bar.title"
-    ) as HTMLElement).innerText,
+  const title = (
+      document.querySelector(".ytmusic-player-bar.title") as HTMLElement
+    ).innerText,
     video = document.querySelector(".video-stream") as HTMLVideoElement,
     repeatMode = document
       .querySelector('ytmusic-player-bar[slot="player-bar"]')
