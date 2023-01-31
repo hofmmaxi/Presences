@@ -1,7 +1,7 @@
 const presence = new Presence({ clientId: "653578846448123906" }),
 	pages: { [key: string]: string } = {
 		"/usercp.php": "Kullanıcı Profili",
-		"/ihbar/": "İhbar Portalı"
+		"/ihbar/": "İhbar Portalı",
 	};
 
 presence.on("UpdateData", async () => {
@@ -22,8 +22,8 @@ presence.on("UpdateData", async () => {
 			"body > div:nth-child(5) > form > table > tbody > tr:nth-child(1) > td"
 		),
 		presenceData: PresenceData = {
-			largeImageKey: "tht-logo",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			largeImageKey: "https://i.imgur.com/8Lcggfs.png",
+			startTimestamp: Math.floor(Date.now() / 1000),
 		};
 
 	if (kategori && kategori.textContent !== "") {

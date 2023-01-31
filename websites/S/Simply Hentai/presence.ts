@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "608043966285348944"
+	clientId: "608043966285348944",
 });
 let lastPlaybackState = null,
 	reading,
@@ -25,11 +25,11 @@ presence.on("UpdateData", async () => {
 		presenceData.state = `${b.textContent} [Page: ${
 			document.querySelector<HTMLInputElement>(".page-jump.text-center").value
 		}]`;
-		presenceData.largeImageKey = "lg";
+		presenceData.largeImageKey = "https://i.imgur.com/rs9kEod.png";
 		presenceData.startTimestamp = browsingTimestamp;
 	} else {
 		const presenceData: PresenceData = {
-			largeImageKey: "lg"
+			largeImageKey: "https://i.imgur.com/rs9kEod.png",
 		};
 
 		presenceData.details = "Browsing...";

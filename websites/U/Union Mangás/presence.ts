@@ -1,16 +1,16 @@
 const presence = new Presence({
-		clientId: "609791567540256780"
+		clientId: "609791567540256780",
 	}),
 	startTimestamp = Math.floor(Date.now() / 1000),
 	{ pathname } = window.location,
 	strings = presence.getStrings({
-		browsing: "presence.activity.browsing"
+		browsing: "general.browsing",
 	});
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "union_lg",
-		startTimestamp
+		largeImageKey: "https://i.imgur.com/6J5Zxx5.png",
+		startTimestamp,
 	};
 
 	if (pathname.startsWith("/lista-mangas")) {

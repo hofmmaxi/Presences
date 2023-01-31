@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "878203434468245545"
+		clientId: "878203434468245545",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -22,8 +22,8 @@ presence.on(
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "logo",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/kKn9z4w.png",
+			startTimestamp: browsingTimestamp,
 		},
 		{ pathname, href, search, hostname } = document.location,
 		buttons = await presence.getSetting<boolean>("buttons");
@@ -88,8 +88,8 @@ presence.on("UpdateData", async () => {
 					{ label: "Read Manga", url: href },
 					{
 						label: "Read Summary",
-						url: href.substring(0, href.lastIndexOf("chapter"))
-					}
+						url: href.substring(0, href.lastIndexOf("chapter")),
+					},
 				];
 			}
 		} else if (location.hash) {

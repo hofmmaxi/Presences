@@ -1,11 +1,11 @@
 const presence = new Presence({
-	clientId: "619967690056007699"
+	clientId: "619967690056007699",
 });
 
 presence.on("UpdateData", async () => {
 	const urlParams = new URLSearchParams(window.location.search),
 		presenceData: PresenceData = {
-			largeImageKey: "lg-r34"
+			largeImageKey: "https://i.imgur.com/3jHxZJW.png",
 		};
 	if (document.location.href.includes("rule34.xxx")) {
 		if (document.location.pathname === "/")

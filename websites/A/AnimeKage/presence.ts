@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "640244531346014214"
+		clientId: "640244531346014214",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused"
+		play: "general.playing",
+		pause: "general.paused",
 	});
 
 let browsingTimestamp = Math.floor(Date.now() / 1000),
@@ -31,7 +31,7 @@ presence.on("iFrameData", (data: IFrameData) => {
 			iFrameVideo,
 			paused,
 			currTime: currentTime,
-			dur: duration
+			dur: duration,
 		} = data.iframeVideo);
 	}
 });
@@ -42,8 +42,8 @@ presence.on("UpdateData", async () => {
 		browsingTimestamp = Math.floor(Date.now() / 1000);
 	}
 	const presenceData: PresenceData = {
-		largeImageKey: "ak",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/zVbpanX.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (

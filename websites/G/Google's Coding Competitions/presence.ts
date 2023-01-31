@@ -23,9 +23,9 @@ setPresence();
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
+		largeImageKey: "https://i.imgur.com/kmABIM3.png",
 		details: "Home page",
-		startTimestamp: timeElapsed
+		startTimestamp: timeElapsed,
 	};
 
 	switch (location.pathname.split("/")[1]) {

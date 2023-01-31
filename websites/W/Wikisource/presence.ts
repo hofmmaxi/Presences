@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "733216897562050570"
+	clientId: "733216897562050570",
 });
 
 let currentURL = new URL(document.location.href),
@@ -7,8 +7,8 @@ let currentURL = new URL(document.location.href),
 const browsingTimestamp = Math.floor(Date.now() / 1000);
 let presenceData: PresenceData = {
 	details: "Viewing an unsupported page",
-	largeImageKey: "lg",
-	startTimestamp: browsingTimestamp
+	largeImageKey: "https://i.imgur.com/HS37uGx.png",
+	startTimestamp: browsingTimestamp,
 };
 const updateCallback = {
 		_function: null as () => void,
@@ -20,7 +20,7 @@ const updateCallback = {
 		},
 		get present(): boolean {
 			return this._function !== null;
-		}
+		},
 	},
 	/**
 	 * Initialize/reset presenceData.
@@ -28,8 +28,8 @@ const updateCallback = {
 	resetData = (
 		defaultData: PresenceData = {
 			details: "Viewing an unsupported page",
-			largeImageKey: "lg",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/HS37uGx.png",
+			startTimestamp: browsingTimestamp,
 		}
 	): void => {
 		currentURL = new URL(document.location.href);
@@ -104,7 +104,7 @@ const updateCallback = {
 			2301: "Viewing a gadget talk page",
 			2302: "Viewing a gadget definition page",
 			2303: "Viewing a gadget definition talk page",
-			2600: "Viewing a topic"
+			2600: "Viewing a topic",
 		};
 		return (
 			details[

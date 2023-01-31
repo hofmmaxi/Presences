@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "672143036767272961"
+		clientId: "672143036767272961",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000),
 	url = new URLSearchParams(window.location.search).get("site");
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/0Ewrhd9.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (url === "0") presenceData.details = "viewing site A";

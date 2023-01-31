@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "630239297521319953"
+		clientId: "630239297521319953",
 	}),
 	capitalize = (text: string): string => {
 		return text
@@ -18,8 +18,8 @@ presence.on("UpdateData", () => {
 		elapsed = Math.floor(Date.now() / 1000);
 	}
 	const presenceData: PresenceData = {
-			largeImageKey: "w3schools",
-			startTimestamp: elapsed
+			largeImageKey: "https://i.imgur.com/gTv6Nu3.png",
+			startTimestamp: elapsed,
 		},
 		language = document.querySelector(".w3-bar-item.w3-button.active"),
 		lesson = document.querySelector("#main > h1"),

@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "636588416854917130"
+		clientId: "636588416854917130",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let title: HTMLElement, search: HTMLElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "1337x",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/zc7kuDN.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (

@@ -1,10 +1,10 @@
 const presence = new Presence({
-		clientId: "767402228825980929"
+		clientId: "767402228825980929",
 	}),
 	newStrings = presence.getStrings({
 		play: "general.playing",
 		pause: "general.paused",
-		live: "general.live"
+		live: "general.live",
 	}),
 	elapsed = Math.floor(Date.now() / 1000);
 
@@ -15,8 +15,8 @@ presence.on("UpdateData", async () => {
 
 	const path = window.location.pathname,
 		presenceData: PresenceData = {
-			largeImageKey: "peacock",
-			startTimestamp: elapsed
+			largeImageKey: "https://i.imgur.com/6t52fkP.png",
+			startTimestamp: elapsed,
 		};
 
 	strings ??= await newStrings;

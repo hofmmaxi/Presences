@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "660822610090655755"
+		clientId: "660822610090655755",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo1",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/t04RdxC.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.hostname === "iloot.it") {

@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "618138980273094695"
+		clientId: "618138980273094695",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let item: HTMLElement,
@@ -11,8 +11,8 @@ let item: HTMLElement,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "amazon",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/qPBCqNA.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	item = document.querySelector(

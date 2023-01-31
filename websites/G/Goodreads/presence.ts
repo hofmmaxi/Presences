@@ -5,9 +5,9 @@ let book: string, author: string;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "goodreads",
+		largeImageKey: "https://i.imgur.com/DtHgzGt.png",
 		details: "Browsing Goodreads",
-		startTimestamp: timeElapsed
+		startTimestamp: timeElapsed,
 	};
 
 	if (

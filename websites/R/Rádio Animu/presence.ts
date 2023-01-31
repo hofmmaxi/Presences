@@ -1,8 +1,8 @@
 const presence = new Presence({
-		clientId: "828278673680498699"
+		clientId: "828278673680498699",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing"
+		play: "general.playing",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let artist: string, title: string, artwork: string, playing: boolean;
@@ -22,8 +22,8 @@ presence.on(
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "animu",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/SHAH0WR.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (playing) {

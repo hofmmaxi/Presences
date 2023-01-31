@@ -1,11 +1,11 @@
 const presence = new Presence({
-		clientId: "691669470057594940"
+		clientId: "691669470057594940",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo"
+		largeImageKey: "https://i.imgur.com/smf7r3R.png",
 	};
 
 	if (document.location.host.split(".")[0] !== "forum") {

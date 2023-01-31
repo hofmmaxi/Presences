@@ -1,14 +1,14 @@
 const presence = new Presence({
-		clientId: "728904519055966228"
+		clientId: "728904519055966228",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
+		largeImageKey: "https://i.imgur.com/u6MICx7.png",
 		smallImageKey: "reading",
 		smallImageText: "Reading",
-		startTimestamp: browsingTimestamp
+		startTimestamp: browsingTimestamp,
 	};
 
 	function checkSubPage(): void {

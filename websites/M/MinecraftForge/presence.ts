@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "626462884649500686" // CLIENT ID FOR YOUR PRESENCE
+		clientId: "626462884649500686", // CLIENT ID FOR YOUR PRESENCE
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let user: Element | HTMLElement | string,
@@ -8,8 +8,8 @@ let user: Element | HTMLElement | string,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "forge",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/yPLG6pu.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	switch (document.location.hostname) {

@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "691593596692070420"
+	clientId: "691593596692070420",
 });
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo"
+		largeImageKey: "https://i.imgur.com/g1ncFAD.png",
 	};
 
 	if (!document.querySelectorAll(".sics-component__headline__title")[0]) {

@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "829466407321731082"
+		clientId: "829466407321731082",
 	}),
 	timestamp = Math.floor(Date.now() / 1000);
 
@@ -90,8 +90,8 @@ function isPodcast(): boolean {
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "lg",
-			startTimestamp: timestamp
+			largeImageKey: "https://i.imgur.com/dcx0aN7.png",
+			startTimestamp: timestamp,
 		},
 		buttons = await presence.getSetting<boolean>("buttons");
 
@@ -109,8 +109,8 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: "View Profile",
-						url: document.location.origin + authorUrl
-					}
+						url: document.location.origin + authorUrl,
+					},
 				];
 			}
 			break;
@@ -123,12 +123,12 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: "View Article",
-						url: document.location.href
+						url: document.location.href,
 					},
 					{
 						label: "View Author",
-						url: document.location.origin + authorUrl
-					}
+						url: document.location.origin + authorUrl,
+					},
 				];
 			}
 			break;
@@ -139,12 +139,12 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: "View Video",
-						url: document.location.href
+						url: document.location.href,
 					},
 					{
 						label: "View Author",
-						url: document.location.origin + authorUrl
-					}
+						url: document.location.origin + authorUrl,
+					},
 				];
 			}
 			contentStateKey = (<HTMLVideoElement>document.querySelector("video"))
@@ -174,12 +174,12 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: "View Podcast",
-						url: document.location.href
+						url: document.location.href,
 					},
 					{
 						label: "View Author",
-						url: document.location.origin + authorUrl
-					}
+						url: document.location.origin + authorUrl,
+					},
 				];
 			}
 			contentStateKey = (<HTMLAudioElement>document.querySelector("#audio"))
@@ -246,8 +246,8 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: "View Series",
-						url: document.location.href
-					}
+						url: document.location.href,
+					},
 				];
 			}
 			break;

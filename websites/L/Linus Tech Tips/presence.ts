@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "754742129221173278"
+		clientId: "754742129221173278",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -7,8 +7,8 @@ let item;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "linustechtips",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/qEbuRPv.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.hostname === "linustechtips.com") {

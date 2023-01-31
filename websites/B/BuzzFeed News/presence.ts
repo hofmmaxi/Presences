@@ -1,12 +1,12 @@
 const presence = new Presence({
-	clientId: "651445584955310100"
+	clientId: "651445584955310100",
 });
 
 presence.on("UpdateData", async () => {
 	const page = document.location.pathname,
 		presenceData: PresenceData = {
-			largeImageKey: "bfnews-logo",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			largeImageKey: "https://i.imgur.com/5qKNHPi.png",
+			startTimestamp: Math.floor(Date.now() / 1000),
 		};
 
 	if (page.includes("/section")) {

@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "711685584573169686"
+		clientId: "711685584573169686",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -44,8 +44,8 @@ presence.on("iFrameData", (data: IFrameData) => {
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "logo",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/dv1nn7J.png",
+			startTimestamp: browsingTimestamp,
 		},
 		path = document.location.pathname;
 

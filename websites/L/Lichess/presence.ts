@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "632924426131996702"
+		clientId: "632924426131996702",
 	}),
 	pages: {
 		[name: string]: string;
@@ -21,7 +21,7 @@ const presence = new Presence({
 		"/analysis": "Analysis Board",
 		"/editor": "Board Editor",
 		"/paste": "Import Game",
-		"/games/search": "Advanced Search"
+		"/games/search": "Advanced Search",
 	};
 
 presence.on("UpdateData", async () => {
@@ -37,8 +37,8 @@ presence.on("UpdateData", async () => {
 			)
 			?.textContent.trim(),
 		presenceData: PresenceData = {
-			largeImageKey: "lc-logo",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			largeImageKey: "https://i.imgur.com/dw8pZ1d.png",
+			startTimestamp: Math.floor(Date.now() / 1000),
 		};
 
 	if ((page && pages[page]) || (page && pages[page.slice(0, -1)])) {

@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "656152542429839380"
+		clientId: "656152542429839380",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/GT29NDe.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.hostname === "altdentifier.com") {

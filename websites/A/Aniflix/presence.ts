@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "630093952342687794" // CLIENT ID FOR YOUR PRESENCE
+		clientId: "630093952342687794", // CLIENT ID FOR YOUR PRESENCE
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused"
+		play: "general.playing",
+		pause: "general.paused",
 	});
 
 let browsingTimestamp = Math.floor(Date.now() / 1000),
@@ -49,11 +49,11 @@ presence.on("UpdateData", async () => {
 			Math.floor(duration)
 		),
 		presenceData: PresenceData = {
-			largeImageKey: "aniflix",
+			largeImageKey: "https://i.imgur.com/lza7ROE.png",
 			smallImageKey: paused ? "pause" : "play",
 			smallImageText: paused ? (await strings).pause : (await strings).play,
 			startTimestamp,
-			endTimestamp
+			endTimestamp,
 		};
 
 	search = document.querySelector<HTMLInputElement>(

@@ -1,11 +1,11 @@
 const presence = new Presence({
-		clientId: "618233809481236491"
+		clientId: "618233809481236491",
 	}),
 	timeElapsed = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "rainwv"
+		largeImageKey: "https://i.imgur.com/XJb9wAx.png",
 	};
 	if (document.location.pathname.startsWith("/pages/playback_history"))
 		presenceData.details = "Looking at playback history...";

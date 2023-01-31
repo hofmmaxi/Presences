@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "640980262750126080"
+		clientId: "640980262750126080",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "tmo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/1CYkKgl.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.hostname === "lectortmo.com") {

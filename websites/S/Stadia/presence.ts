@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "895742751944089600"
+		clientId: "895742751944089600",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let gameName: HTMLElement,
@@ -9,8 +9,8 @@ let gameName: HTMLElement,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/beLx5ko.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.pathname.includes("home")) {

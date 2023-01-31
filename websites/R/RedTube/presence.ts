@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "605861238852943988"
+		clientId: "605861238852943988",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused"
+		play: "general.playing",
+		pause: "general.paused",
 	});
 
 presence.on("UpdateData", async () => {
@@ -21,13 +21,13 @@ presence.on("UpdateData", async () => {
 			presenceData: PresenceData = {
 				details: title?.textContent ?? "Title not found...",
 				state: uploader?.textContent ?? "Uploader not found...",
-				largeImageKey: "lg",
+				largeImageKey: "https://i.imgur.com/YrWWEZC.png",
 				smallImageKey: video.paused ? "pause" : "play",
 				smallImageText: video.paused
 					? (await strings).pause
 					: (await strings).play,
 				startTimestamp: timestamps[0],
-				endTimestamp: timestamps[1]
+				endTimestamp: timestamps[1],
 			};
 
 		//* Remove timestamps if paused

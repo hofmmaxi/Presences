@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "775356824240128021"
+		clientId: "775356824240128021",
 	}),
 	skinNames = new Map<string, string>()
 		.set("Angel", "angel")
@@ -29,10 +29,10 @@ let lastlobbyName = "",
 	lastName = "Unnamed";
 
 const presenceData: PresenceData = {
-	largeImageKey: "index",
+	largeImageKey: "https://i.imgur.com/Qdjm4j8.png",
 	startTimestamp: Date.now(),
 	details: "Main Menu",
-	state: "Just Started Playing"
+	state: "Just Started Playing",
 };
 
 presence.on("UpdateData", async () => {

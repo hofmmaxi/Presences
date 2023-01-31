@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "632936001269923880"
+		clientId: "632936001269923880",
 	}),
 	pages: { [k: string]: string } = {
 		"/elemental-by-medium": "Elemental by Medium",
@@ -22,7 +22,7 @@ const presence = new Presence({
 		"/creators": "Creators",
 		"/me/list/bookmarks": "Bookmarks",
 		"/me/publications": "Publications",
-		"/me/settings": "Settings"
+		"/me/settings": "Settings",
 	};
 
 presence.on("UpdateData", async () => {
@@ -34,8 +34,8 @@ presence.on("UpdateData", async () => {
 		[, ...hrefRest] = document.location.href.split("//"),
 		href = hrefRest.join(""),
 		presenceData: PresenceData = {
-			largeImageKey: "medium-logo",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			largeImageKey: "https://i.imgur.com/7bfJ5VM.png",
+			startTimestamp: Math.floor(Date.now() / 1000),
 		};
 
 	if ((page && pages[page]) || (page && pages[page.slice(0, -1)])) {

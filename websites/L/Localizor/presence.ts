@@ -1,19 +1,19 @@
 const presence = new Presence({
-		clientId: "938606998650519663"
+		clientId: "938606998650519663",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
 			details: "Viewing an unsupported page",
-			largeImageKey: "logo",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/b7Go6NC.png",
+			startTimestamp: browsingTimestamp,
 		},
 		page = document.location.pathname,
 		[time, buttons, images] = await Promise.all([
 			presence.getSetting<boolean>("time"),
 			presence.getSetting<boolean>("buttons"),
-			presence.getSetting<boolean>("images")
+			presence.getSetting<boolean>("images"),
 		]);
 
 	if (page === "/") presenceData.details = "Browsing home page";
@@ -28,8 +28,8 @@ presence.on("UpdateData", async () => {
 		presenceData.buttons = [
 			{
 				label: "View Profile",
-				url: document.URL
-			}
+				url: document.URL,
+			},
 		];
 	} else if (page.includes("/leaderboard"))
 		presenceData.details = "Viewing Leaderboard";
@@ -52,8 +52,8 @@ presence.on("UpdateData", async () => {
 		presenceData.buttons = [
 			{
 				label: "View Game",
-				url: document.URL
-			}
+				url: document.URL,
+			},
 		];
 	} else if (page.includes("/activity")) {
 		presenceData.details = "Viewing game activity:";
@@ -63,8 +63,8 @@ presence.on("UpdateData", async () => {
 		presenceData.buttons = [
 			{
 				label: "View Game Activity",
-				url: document.URL
-			}
+				url: document.URL,
+			},
 		];
 	} else if (
 		page.includes("/translate") &&
@@ -92,14 +92,14 @@ presence.on("UpdateData", async () => {
 		presenceData.buttons = [
 			{
 				label: "View Game",
-				url: document.URL.split("/translate").join("")
-			}
+				url: document.URL.split("/translate").join(""),
+			},
 		];
 	}
 
 	if (!time) delete presenceData.startTimestamp;
 	if (!images && presenceData.largeImageKey)
-		presenceData.largeImageKey = "logo";
+		presenceData.largeImageKey = "https://i.imgur.com/b7Go6NC.png";
 	if (!buttons && presenceData.buttons) delete presenceData.buttons;
 	if (presenceData.details) presence.setActivity(presenceData);
 	else presence.setActivity();

@@ -1,13 +1,13 @@
 const presence = new Presence({
-	clientId: "715667985267949649"
+	clientId: "715667985267949649",
 });
 let title, subTitle, chapter, quiz, search;
 const browsingTimestamp = Math.floor(Date.now() / 1000),
 	path = document.location.pathname;
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/t370zFk.png",
+		startTimestamp: browsingTimestamp,
 	};
 	if (path === "/") presenceData.details = "Viewing Home";
 	else if (path.includes("/literature/")) {

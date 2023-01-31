@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "731069087031230487"
+		clientId: "731069087031230487",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let currentURL = new URL(document.location.href),
 	currentPath = currentURL.pathname.replace(/^\/|\/$/g, "").split("/"),
 	presenceData: PresenceData = {
 		details: "Viewing an unsupported page",
-		largeImageKey: "lg",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/KPcs9y1.png",
+		startTimestamp: browsingTimestamp,
 	};
 const updateCallback = {
 		_function: null as () => void,
@@ -19,7 +19,7 @@ const updateCallback = {
 		},
 		get present(): boolean {
 			return this._function !== null;
-		}
+		},
 	},
 	/**
 	 * Initialize/reset presenceData.
@@ -27,8 +27,8 @@ const updateCallback = {
 	resetData = (
 		defaultData: PresenceData = {
 			details: "Viewing an unsupported page",
-			largeImageKey: "lg",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/KPcs9y1.png",
+			startTimestamp: browsingTimestamp,
 		}
 	): void => {
 		currentURL = new URL(document.location.href);
@@ -51,7 +51,7 @@ const updateCallback = {
 		const startTime = Date.now();
 		return [
 			Math.floor(startTime / 1000),
-			Math.floor(startTime / 1000) - videoTime + videoDuration
+			Math.floor(startTime / 1000) - videoTime + videoDuration,
 		];
 	};
 
@@ -66,7 +66,7 @@ const updateCallback = {
 			presenceData.state = {
 				tac: "Terms and Conditions",
 				privacy: "Privacy Policy",
-				logos: "Logos & Signpacks"
+				logos: "Logos & Signpacks",
 			}[currentPath[0]];
 		}
 	} else if (

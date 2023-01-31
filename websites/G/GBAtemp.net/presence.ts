@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "632110854543769601"
+		clientId: "632110854543769601",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let threadName: HTMLElement,
@@ -12,8 +12,8 @@ let threadName: HTMLElement,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "tempy",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/Q8Jx76k.jpg",
+		startTimestamp: browsingTimestamp,
 	};
 	if (document.location.pathname.startsWith("/threads")) {
 		threadName = document.querySelector("a#threadTitle");

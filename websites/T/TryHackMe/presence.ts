@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "656826806061498368" //The client ID of the Application created at https://discordapp.com/developers/applications
+		clientId: "656826806061498368", //The client ID of the Application created at https://discordapp.com/developers/applications
 		//Enable use and detection of media key presses
 	}),
 	presenceData: PresenceData = {
-		largeImageKey: "icon"
+		largeImageKey: "https://i.imgur.com/gqL7pDD.png",
 	},
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let customData = false;
@@ -25,8 +25,8 @@ presence.on("UpdateData", async () => {
 			presence.setActivity({
 				details: "Completing room:",
 				state: title.textContent,
-				largeImageKey: "icon",
-				startTimestamp: browsingTimestamp
+				largeImageKey: "https://i.imgur.com/gqL7pDD.png",
+				startTimestamp: browsingTimestamp,
 			});
 		} else presenceData.details = "Looking at rooms!";
 	} else if (

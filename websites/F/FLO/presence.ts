@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "857504781438681089"
+	clientId: "857504781438681089",
 });
 
 function getQuery() {
@@ -13,7 +13,7 @@ function getQuery() {
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "flo-logo"
+			largeImageKey: "https://i.imgur.com/1EEUg5a.png",
 		},
 		player = document.querySelector(".playbar_wrap");
 	if (!(player.querySelector("input.progress") as HTMLInputElement).disabled) {

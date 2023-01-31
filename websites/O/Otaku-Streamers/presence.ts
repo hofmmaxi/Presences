@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "719985436075753492"
+		clientId: "719985436075753492",
 	}),
 	path = window.location.pathname,
 	browsingTimestamp = Math.floor(Date.now() / 1000);
@@ -7,8 +7,8 @@ let title, video, timestamps, chapter, blog;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/uAylLfi.png",
+		startTimestamp: browsingTimestamp,
 	};
 	if (window.location.hostname === "otaku-streamers.com") {
 		presenceData.largeImageKey = "betalogo";
@@ -66,7 +66,7 @@ presence.on("UpdateData", async () => {
 			} else presenceData.details = "Unable to Read Page";
 		}
 	} else if (window.location.hostname === "beta.otaku-streamers.com") {
-		presenceData.largeImageKey = "logo";
+		presenceData.largeImageKey = "https://i.imgur.com/uAylLfi.png";
 		switch (path) {
 			case "/":
 			case "/index.php":

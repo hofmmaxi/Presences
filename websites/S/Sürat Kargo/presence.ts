@@ -1,12 +1,12 @@
 const presence = new Presence({
-	clientId: "778362242710110208"
+	clientId: "778362242710110208",
 });
 
 presence.on("UpdateData", async () => {
 	const path: string = document.location.pathname,
 		ayrac: string[] = path.split("/"),
 		presenceData: PresenceData = {
-			largeImageKey: "suratkargo"
+			largeImageKey: "https://i.imgur.com/CBsEtCf.png",
 		};
 	// Hizmetlerimiz
 	if (path.startsWith("/Hizmetlerimiz")) {

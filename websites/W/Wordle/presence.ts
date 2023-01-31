@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "938310167404101683"
+		clientId: "938310167404101683",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000),
 	puzzleNumber = Math.trunc(
@@ -9,8 +9,8 @@ const presence = new Presence({
 presence.on("UpdateData", async () => {
 	if (document.location.pathname.includes("/wordle")) {
 		const presenceData: PresenceData = {
-				largeImageKey: "logo",
-				startTimestamp: browsingTimestamp
+				largeImageKey: "https://i.imgur.com/N19NFSF.png",
+				startTimestamp: browsingTimestamp,
 			},
 			guess = await presence.getSetting<boolean>("guess");
 		for (let i = 0; i < 6; i++) {

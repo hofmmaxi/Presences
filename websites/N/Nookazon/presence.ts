@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "717505812964048986"
+		clientId: "717505812964048986",
 	}),
 	elapsed = Math.floor(Date.now() / 1000);
 
@@ -29,8 +29,8 @@ String.prototype.capitalize = function (d = /[ -]/): string {
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "icon",
-			startTimestamp: elapsed
+			largeImageKey: "https://i.imgur.com/ey6oFrP.png",
+			startTimestamp: elapsed,
 		},
 		useChatNames = await presence.getSetting<boolean>("useChatNames");
 

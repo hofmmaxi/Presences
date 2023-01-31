@@ -1,14 +1,14 @@
 const presence = new Presence({
-	clientId: "670111348130185267"
+	clientId: "670111348130185267",
 });
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
+		largeImageKey: "https://i.imgur.com/fAkYGNA.png",
 		smallImageKey: "logo-outline",
 		smallImageText: "codepen.io",
 		details: "Codepen.io",
-		state: "Coding..."
+		state: "Coding...",
 	};
 
 	if (

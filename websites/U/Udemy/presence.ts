@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "639131130703904808"
+		clientId: "639131130703904808",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused"
+		play: "general.playing",
+		pause: "general.paused",
 	}),
 	pages: { [k: string]: string } = {
 		"/": "Homepage",
@@ -41,15 +41,15 @@ const presence = new Presence({
 		"/home/my-courses/search": "My Courses",
 		"/home/my-courses/collections": "My Courses (Collections)",
 		"/home/my-courses/wishlist": "My Courses (Wishlist)",
-		"/home/my-courses/archived": "My Courses (Archived)"
+		"/home/my-courses/archived": "My Courses (Archived)",
 	};
 
 presence.on("UpdateData", async () => {
 	const page = document.location.pathname,
 		video = document.querySelector("video"),
 		presenceData: PresenceData = {
-			largeImageKey: "ud-logo",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			largeImageKey: "https://i.imgur.com/cTa4588.png",
+			startTimestamp: Math.floor(Date.now() / 1000),
 		};
 
 	if (page.includes("/courses/search")) {

@@ -1,9 +1,9 @@
 const presence = new Presence({
-		clientId: "769651625379102761"
+		clientId: "769651625379102761",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused"
+		play: "general.playing",
+		pause: "general.paused",
 	}),
 	kitapPages: { [k: string]: string } = {
 		"/": "Ana Sayfa",
@@ -20,7 +20,7 @@ const presence = new Presence({
 		"/my-account/favorite": "Dinlediklerim",
 		"/my-account/watch-later": "Dinlenecekler",
 		"/my-account/update": "Profili Düzenle",
-		"/my-account/change-password": "Şifre Değiştir"
+		"/my-account/change-password": "Şifre Değiştir",
 	};
 
 presence.on("UpdateData", async () => {
@@ -43,33 +43,33 @@ presence.on("UpdateData", async () => {
 			.join(" ");
 
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir türü inceliyor:",
 			state: genre || "Bilinmeyen Tür",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else if (page.includes("/az-list/")) {
 		const letter = page.split("/")?.[page.split("/").length - 1]?.toUpperCase();
 
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Arşivi inceliyor:",
 			state: letter ? `Harf: ${letter}` : "Bilinmeyen Harf",
 			smallImageKey: "search",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else if (page.includes("/search")) {
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir şey arıyor:",
 			state:
 				document.title.replace(" - Kitapların Dili", "") || "Bilinmeyen Terim",
 			smallImageKey: "search",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else if (page.includes("/country/")) {
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir dili inceliyor:",
 			state:
 				document
@@ -81,16 +81,16 @@ presence.on("UpdateData", async () => {
 					)
 					?.join(" ") || "Bilinmeyen Dil",
 			smallImageKey: "search",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else if (page.includes("/star/")) {
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir yazarı inceliyor:",
 			state:
 				document.querySelector(".page-title > font")?.textContent?.trim() ||
 				"Bilinmeyen Yazar",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else if (page.includes("/watch/")) {
 		const bookName =
@@ -100,10 +100,10 @@ presence.on("UpdateData", async () => {
 
 		if (!video) {
 			return presence.setActivity({
-				largeImageKey: "kd-logo",
+				largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 				details: bookName,
 				smallImageKey: "question",
-				smallImageText: "Video verisi alınamıyor"
+				smallImageText: "Video verisi alınamıyor",
 			});
 		}
 
@@ -112,14 +112,14 @@ presence.on("UpdateData", async () => {
 				Math.floor(video.duration)
 			),
 			presenceData: PresenceData = {
-				largeImageKey: "kd-logo",
+				largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 				details: bookName,
 				smallImageKey: video.paused ? "pause" : "play",
 				smallImageText: video.paused
 					? (await strings).pause
 					: (await strings).play,
 				startTimestamp: timestamps[0],
-				endTimestamp: timestamps[1]
+				endTimestamp: timestamps[1],
 			};
 
 		if (video.paused) {
@@ -134,21 +134,21 @@ presence.on("UpdateData", async () => {
 		kitapPages[page.replace(".html", "")]
 	) {
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir sayfaya göz atıyor:",
 			state:
 				kitapPages[page] ||
 				kitapPages[page.slice(0, -1)] ||
 				kitapPages[page.replace(".html", "")] ||
 				"Bilinmeyen Sayfa",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	} else {
 		presence.setActivity({
-			largeImageKey: "kd-logo",
+			largeImageKey: "https://i.imgur.com/vVYzTFE.png",
 			details: "Bir sayfaya göz atıyor:",
 			state: "Ana Sayfa",
-			startTimestamp: Date.now()
+			startTimestamp: Date.now(),
 		});
 	}
 });

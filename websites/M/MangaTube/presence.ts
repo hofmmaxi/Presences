@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "770342692462526465"
+	clientId: "770342692462526465",
 });
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "mangatube"
+		largeImageKey: "https://i.imgur.com/roeUqz0.png",
 	};
 
 	//Startseite

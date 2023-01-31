@@ -2,21 +2,21 @@ let elapsed = Math.floor(Date.now() / 1000),
 	prevUrl = document.location.href;
 
 const presence = new Presence({
-		clientId: "854999470357217290"
+		clientId: "854999470357217290",
 	}),
 	// TODO: Add multiLang
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused",
+		play: "general.playing",
+		pause: "general.paused",
 		browsing: "general.browsing",
 		browsingThrough: "discord.browseThrough",
 		buttonWatchVideo: "general.buttonWatchVideo",
-		buttonWatchStream: "general.buttonWatchStream"
+		buttonWatchStream: "general.buttonWatchStream",
 	});
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "zdf"
+			largeImageKey: "https://i.imgur.com/5mxv8gX.png",
 		},
 		video = document.querySelector<HTMLVideoElement>(
 			"div.zdfplayer-video_wrapper video"
@@ -63,7 +63,7 @@ presence.on("UpdateData", async () => {
 				.trim();
 			presenceData.startTimestamp = elapsed;
 			presenceData.buttons = [
-				{ label: (await strings).buttonWatchStream, url: prevUrl }
+				{ label: (await strings).buttonWatchStream, url: prevUrl },
 			];
 
 			if (
@@ -78,7 +78,7 @@ presence.on("UpdateData", async () => {
 			}
 		} else {
 			// Video-on-demand
-			presenceData.largeImageKey = "zdf";
+			presenceData.largeImageKey = "https://i.imgur.com/5mxv8gX.png";
 			presenceData.smallImageKey = "play";
 			presenceData.smallImageText = (await strings).play;
 
@@ -104,7 +104,7 @@ presence.on("UpdateData", async () => {
 				Math.floor(video.duration)
 			);
 			presenceData.buttons = [
-				{ label: (await strings).buttonWatchVideo, url: prevUrl }
+				{ label: (await strings).buttonWatchVideo, url: prevUrl },
 			];
 			if (video.paused) {
 				presenceData.smallImageKey = "pause";

@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "808404067344318494"
+	clientId: "808404067344318494",
 });
 
 presence.on("UpdateData", async () => {
@@ -16,8 +16,8 @@ presence.on("UpdateData", async () => {
 		return str;
 	}
 	const presenceData: PresenceData = {
-		largeImageKey: "icon",
-		startTimestamp: Date.now()
+		largeImageKey: "https://i.imgur.com/imTvu2G.png",
+		startTimestamp: Date.now(),
 	};
 	let loc = window.location.href;
 	if (loc.endsWith("/")) loc = loc.slice(0, -1); // remove trailing slash
@@ -69,7 +69,7 @@ presence.on("UpdateData", async () => {
 		presenceData.details = await getStringFromSettings(presence, "manage", {});
 	else if (loc.match(/profiles/)) {
 		presenceData.details = await getStringFromSettings(presence, "profile", {
-			name: loc.split("/")[loc.split("/").length - 1]
+			name: loc.split("/")[loc.split("/").length - 1],
 		});
 	} else if (loc.endsWith("dashboard")) {
 		presenceData.details = await getStringFromSettings(
@@ -87,7 +87,7 @@ presence.on("UpdateData", async () => {
 					term: loc.replace(
 						/https?:\/\/readthedocs[.](io|org)\/search\/\?q=([^&]+).*/g,
 						"$2"
-					)
+					),
 				}
 			);
 		}

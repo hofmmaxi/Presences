@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "651439039156715531"
+	clientId: "651439039156715531",
 });
 
 presence.on("UpdateData", () => {
@@ -7,8 +7,8 @@ presence.on("UpdateData", () => {
 		route = path.split("/"),
 		browsingTimestamp = Math.floor(Date.now() / 1000),
 		presenceData: PresenceData = {
-			largeImageKey: "lawco",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/vADndhN.png",
+			startTimestamp: browsingTimestamp,
 		};
 
 	if (path === "/")

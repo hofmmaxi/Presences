@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "633795089600348160"
+		clientId: "633795089600348160",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let title: HTMLElement, search: HTMLInputElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo_y"
+		largeImageKey: "https://i.imgur.com/yQShI1r.png",
 	};
 
 	if (document.location.hostname === "yagpdb.xyz") {

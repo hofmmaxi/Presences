@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "779118675491815434"
+	clientId: "779118675491815434",
 });
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "bonkleagues"
+		largeImageKey: "https://i.imgur.com/NSmuGT9.png",
 	};
 
 	if (document.location.pathname.startsWith("/skins.html")) {

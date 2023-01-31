@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "629413852391669791"
+		clientId: "629413852391669791",
 	}),
 	presenceData: PresenceData = {
-		largeImageKey: "kitsu_lg"
+		largeImageKey: "https://i.imgur.com/LlascQj.png",
 	};
 
 let path, user: string;
 const strings = presence.getStrings({
-	browsing: "presence.activity.browsing"
+	browsing: "general.browsing",
 });
 
 presence.on("UpdateData", async () => {

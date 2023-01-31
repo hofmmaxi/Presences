@@ -1,18 +1,18 @@
 const presence = new Presence({
-		clientId: "719865208515854369"
+		clientId: "719865208515854369",
 	}),
 	strings = presence.getStrings({
-		play: "presence.playback.playing",
-		pause: "presence.playback.paused",
-		live: "presence.activity.live",
-		browsing: "presence.activity.browsing"
+		play: "general.playing",
+		pause: "general.paused",
+		live: "general.live",
+		browsing: "general.browsing",
 	});
 
 let video = {
 	current: 0,
 	duration: 0,
 	paused: true,
-	isLive: false
+	isLive: false,
 };
 
 presence.on(
@@ -33,9 +33,9 @@ presence.on("UpdateData", async () => {
 		return presence.setActivity({
 			details: "Searching for :",
 			state: document.location.search.replace("?q=", ""),
-			largeImageKey: "logo",
+			largeImageKey: "https://i.imgur.com/HQs4uPj.png",
 			smallImageKey: "search",
-			smallImageText: "Searching..."
+			smallImageText: "Searching...",
 		});
 	}
 
@@ -43,7 +43,7 @@ presence.on("UpdateData", async () => {
 		return presence.setActivity({
 			details: "Browsing for :",
 			state: document.querySelector(".default-title").textContent || "",
-			largeImageKey: "logo"
+			largeImageKey: "https://i.imgur.com/HQs4uPj.png",
 		});
 	}
 

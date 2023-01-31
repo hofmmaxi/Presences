@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "626481021843669044"
+		clientId: "626481021843669044",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let user: HTMLElement, search: HTMLInputElement, title: HTMLElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "bukkit",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/X785snB.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	switch (document.location.hostname) {

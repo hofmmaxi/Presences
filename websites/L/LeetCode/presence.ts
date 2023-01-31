@@ -1,6 +1,6 @@
 // Application ID on Discord developer page
 const presence = new Presence({
-		clientId: "719373053028728894"
+		clientId: "719373053028728894",
 	}),
 	// time spent on current URL
 	timeElapsed: number = Date.now();
@@ -9,8 +9,8 @@ presence.on("UpdateData", async () => {
 	// default settings
 	const presenceData: PresenceData = {
 		details: document.title,
-		largeImageKey: "logo",
-		startTimestamp: timeElapsed
+		largeImageKey: "https://i.imgur.com/v6f2jQA.png",
+		startTimestamp: timeElapsed,
 	};
 
 	// edit attributes based on path

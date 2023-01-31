@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "702375041320484944"
+		clientId: "702375041320484944",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -20,8 +20,8 @@ function getSeconds(videoTime: string, videoDuration: string) {
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/63yIrXo.jpg",
+		startTimestamp: browsingTimestamp,
 	};
 	switch (document.location.pathname) {
 		case "/movie/browse/": {

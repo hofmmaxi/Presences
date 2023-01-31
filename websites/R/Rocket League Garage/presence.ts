@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "636622538356686871"
+		clientId: "636622538356686871",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let title: HTMLElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "rlg"
+		largeImageKey: "https://i.imgur.com/axSJ7wX.png",
 	};
 
 	title = document.querySelector("#offer-balance");

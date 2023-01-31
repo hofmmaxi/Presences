@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "807591728759570453"
+		clientId: "807591728759570453",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
+		largeImageKey: "https://i.imgur.com/3uoPh09.png",
 		startTimestamp: browsingTimestamp,
-		details: "Viewing Page:"
+		details: "Viewing Page:",
 	};
 
 	if (window.location.hostname === "www.binance.com") {

@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "798368817318330400"
+	clientId: "798368817318330400",
 });
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "tokopedia"
+			largeImageKey: "https://i.imgur.com/oR93cDm.png",
 		},
 		elapsed = Math.floor(Date.now() / 1000);
 	if (document.location.hostname === "www.tokopedia.com") {

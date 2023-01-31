@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "647973934603567130"
+		clientId: "647973934603567130",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let title: HTMLElement | Element | string;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "bahamut"
+		largeImageKey: "https://i.imgur.com/k5XqKom.png",
 	};
 
 	if (document.location.hostname === "forum.gamer.com.tw") {

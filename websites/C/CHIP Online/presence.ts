@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "651438286962688044"
+	clientId: "651438286962688044",
 });
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo-chip"
+		largeImageKey: "https://i.imgur.com/e8B18gA.png",
 	};
 
 	if (window.location.pathname.startsWith("/haber/")) {

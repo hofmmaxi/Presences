@@ -44,14 +44,14 @@ class WeTV extends Presence {
 }
 
 const presence = new WeTV({
-	clientId: "840271335183351902"
+	clientId: "840271335183351902",
 });
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
 		details: "Browsing...",
-		largeImageKey: "wetv",
-		smallImageKey: "browse"
+		largeImageKey: "https://i.imgur.com/Cjnky1h.png",
+		smallImageKey: "browse",
 	};
 
 	if (document.location.pathname.includes("/play/")) {

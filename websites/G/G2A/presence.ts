@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "633805202868273153"
+		clientId: "633805202868273153",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 let user: string | HTMLElement | Element, title: string | HTMLElement | Element;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "g2alogo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/TJO23bI.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	switch (document.location.hostname) {

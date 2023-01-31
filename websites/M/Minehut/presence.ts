@@ -2,8 +2,8 @@ const presence = new Presence({ clientId: "898448802829189172" }),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "minehut-main",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/FOvZNY6.png",
+			startTimestamp: browsingTimestamp,
 		},
 		f = document.location.pathname.split("/");
 	if (document.location.hostname === "minehut.com") {
@@ -31,8 +31,8 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: `View ${c}`,
-						url: location.origin + location.pathname
-					}
+						url: location.origin + location.pathname,
+					},
 				];
 			}
 		}
@@ -43,8 +43,8 @@ presence.on("UpdateData", async () => {
 				presenceData.buttons = [
 					{
 						label: `View ${p}`,
-						url: location.origin + location.pathname
-					}
+						url: location.origin + location.pathname,
+					},
 				];
 			}
 		}

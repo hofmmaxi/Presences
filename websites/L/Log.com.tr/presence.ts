@@ -1,10 +1,10 @@
 const presence = new Presence({
-		clientId: "657615662537244673"
+		clientId: "657615662537244673",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000),
 	presenceData: PresenceData = {
-		largeImageKey: "log-logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/4LtbS4t.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 function makeCategoryRPC(title: string): void {

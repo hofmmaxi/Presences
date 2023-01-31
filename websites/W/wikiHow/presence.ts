@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "630570838084812801"
+	clientId: "630570838084812801",
 });
 
 presence.on("UpdateData", async () => {
@@ -22,10 +22,10 @@ presence.on("UpdateData", async () => {
 					? ` (${date.textContent.replace("Updated: ", "")})`
 					: ""
 			} `,
-			largeImageKey: "banner",
+			largeImageKey: "https://i.imgur.com/yY2L00N.png",
 			smallImageKey: "logo",
 			smallImageText: decodeURIComponent(document.location.href),
-			startTimestamp: Math.floor(Date.now() / 1000)
+			startTimestamp: Math.floor(Date.now() / 1000),
 		});
 	}
 
@@ -33,10 +33,10 @@ presence.on("UpdateData", async () => {
 		return presence.setActivity({
 			details: "Viewing a category:",
 			state: category.textContent,
-			largeImageKey: "banner",
+			largeImageKey: "https://i.imgur.com/yY2L00N.png",
 			smallImageKey: "logo",
 			smallImageText: decodeURIComponent(document.location.href),
-			startTimestamp: Math.floor(Date.now() / 1000)
+			startTimestamp: Math.floor(Date.now() / 1000),
 		});
 	}
 
@@ -48,11 +48,11 @@ presence.on("UpdateData", async () => {
 
 		return presence.setActivity({
 			details: "Editing/Writing How to",
-			state: `Topic: ${newTopic ? newTopic : "Unknown."} `,
-			largeImageKey: "banner",
+			state: `Topic: ${newTopic ?? "Unknown."} `,
+			largeImageKey: "https://i.imgur.com/yY2L00N.png",
 			smallImageKey: "logo",
 			smallImageText: decodeURIComponent(document.location.href),
-			startTimestamp: Math.floor(Date.now() / 1000)
+			startTimestamp: Math.floor(Date.now() / 1000),
 		});
 	}
 
@@ -65,18 +65,18 @@ presence.on("UpdateData", async () => {
 		return presence.setActivity({
 			details: "Searching for:",
 			state: `${searching[0].toUpperCase() + searching.slice(1).toLowerCase()}`,
-			largeImageKey: "banner",
+			largeImageKey: "https://i.imgur.com/yY2L00N.png",
 			smallImageKey: "logo",
 			smallImageText: "Searching...",
-			startTimestamp: Math.floor(Date.now() / 1000)
+			startTimestamp: Math.floor(Date.now() / 1000),
 		});
 	}
 
 	return presence.setActivity({
 		details: "Viewing a page:",
 		state: "Homepage",
-		largeImageKey: "banner",
+		largeImageKey: "https://i.imgur.com/yY2L00N.png",
 		smallImageKey: "logo",
-		startTimestamp: Math.floor(Date.now() / 1000)
+		startTimestamp: Math.floor(Date.now() / 1000),
 	});
 });

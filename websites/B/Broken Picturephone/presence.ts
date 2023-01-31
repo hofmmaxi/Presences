@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "756196794727399617"
+	clientId: "756196794727399617",
 });
 
 presence.on("UpdateData", async () => {
@@ -7,8 +7,8 @@ presence.on("UpdateData", async () => {
 		valor = document.querySelectorAll("button").length,
 		players = document.querySelectorAll(".userActive"),
 		presenceData: PresenceData = {
-			largeImageKey: "large_image",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/34NoyFW.png",
+			startTimestamp: browsingTimestamp,
 		};
 
 	if (valor === 1) {

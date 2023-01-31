@@ -1,19 +1,19 @@
 const presence = new Presence({
-	clientId: "852245069984825394"
+	clientId: "852245069984825394",
 });
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "dramagg",
+		largeImageKey: "https://i.imgur.com/tA4eeXJ.png",
 		smallImageKey: "search",
 		smallImageText: "Looking for a thread",
 		details: "Looking for drama!",
-		state: "Browsing"
+		state: "Browsing",
 	};
 
 	switch (true) {
 		case document.location.pathname.includes("/d/"):
-			presenceData.largeImageKey = "dramagg";
+			presenceData.largeImageKey = "https://i.imgur.com/tA4eeXJ.png";
 			presenceData.smallImageKey = "reading";
 			presenceData.smallImageText = "Reading a thread";
 			presenceData.details = `Viewing Thread: ${
@@ -25,8 +25,8 @@ presence.on("UpdateData", () => {
 			presenceData.buttons = [
 				{
 					label: "View Post",
-					url: `${document.URL}`
-				}
+					url: `${document.URL}`,
+				},
 			];
 			break;
 		case document.location.pathname.includes("/u/"):

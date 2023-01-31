@@ -1,12 +1,12 @@
 const presence = new Presence({
-		clientId: "687352219598585905"
+		clientId: "687352219598585905",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "animeradio",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/9q7Vuqr.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	switch (document.location.host) {

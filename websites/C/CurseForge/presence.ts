@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "626536244670889985"
+		clientId: "626536244670889985",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -9,8 +9,8 @@ let user: HTMLElement | string | Element,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "curseforge",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/3V6FWir.png",
+		startTimestamp: browsingTimestamp,
 	};
 	function setStateGame(
 		game: string,

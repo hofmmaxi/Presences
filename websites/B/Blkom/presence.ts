@@ -1,11 +1,11 @@
 const presence = new Presence({
-	clientId: "769568486263095327"
+	clientId: "769568486263095327",
 });
 
 let video = {
 	duration: 0,
 	currentTime: 0,
-	paused: true
+	paused: true,
 };
 
 presence.on(
@@ -17,8 +17,8 @@ presence.on(
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: Math.floor(Date.now() / 1000)
+		largeImageKey: "https://i.imgur.com/PfvR7jD.png",
+		startTimestamp: Math.floor(Date.now() / 1000),
 	};
 
 	if (location.pathname.startsWith("/watch")) {

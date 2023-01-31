@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "861544419005169675"
+		clientId: "861544419005169675",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -18,8 +18,8 @@ presence.on(
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "logo",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/byl8bvz.png",
+			startTimestamp: browsingTimestamp,
 		},
 		{ pathname, search, href } = document.location;
 
@@ -59,8 +59,8 @@ presence.on("UpdateData", async () => {
 					presenceData.buttons = [
 						{
 							label: "Ver Sinopse",
-							url: href
-						}
+							url: href,
+						},
 					];
 				} else {
 					const title: HTMLHeadingElement = document.querySelector(
@@ -84,8 +84,8 @@ presence.on("UpdateData", async () => {
 					presenceData.buttons = [
 						{
 							label: "Assistir o Episódio",
-							url: href
-						}
+							url: href,
+						},
 					];
 				}
 			}

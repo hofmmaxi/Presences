@@ -1,10 +1,10 @@
 const presence = new Presence({
-	clientId: "722549030244057161"
+	clientId: "722549030244057161",
 });
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "taco"
+		largeImageKey: "https://i.imgur.com/L5J9p8y.png",
 	};
 	switch (location.pathname.split("/")[1]) {
 		case "guide":
@@ -15,7 +15,7 @@ presence.on("UpdateData", async () => {
 					: null,
 				document.querySelector(".sidebar-sub-header > a.active")
 					? document.querySelector(".sidebar-sub-header > a.active").textContent
-					: null
+					: null,
 			]
 				.filter(a => !!a)
 				.join(" ― ");

@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "670669014363668481"
+		clientId: "670669014363668481",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000),
 	actionURL = new URL(document.location.href),
@@ -8,8 +8,8 @@ let title: HTMLElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/9tsqblt.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 	title = document.querySelector("h1#firstHeading");

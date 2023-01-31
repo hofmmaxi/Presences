@@ -38,15 +38,15 @@ presence.on("UpdateData", async () => {
 					`${data.now_playing.song.artist} - ${data.now_playing.song.title}`
 				)
 				.replace("%title%", data.now_playing.song.title || "Title"),
-			timestamp: await presence.getSetting<boolean>("timestamp")
+			timestamp: await presence.getSetting<boolean>("timestamp"),
 		},
 		presenceData: PresenceData = {
-			largeImageKey: "logo",
+			largeImageKey: "https://i.imgur.com/36Ln5RE.png",
 			details: settings.details,
 			state: settings.state,
 			smallImageText: `${
 				data.live.is_live ? data.live.streamer_name : "AutoDJ"
-			} is live!`
+			} is live!`,
 		};
 
 	if (settings.timestamp) presenceData.startTimestamp = timestamp;

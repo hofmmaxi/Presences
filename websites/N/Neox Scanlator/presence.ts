@@ -1,9 +1,9 @@
 const presence = new Presence({
-	clientId: "704585837949747330"
+	clientId: "704585837949747330",
 });
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			startTimestamp: Math.floor(Date.now() / 1000)
+			startTimestamp: Math.floor(Date.now() / 1000),
 		},
 		path = document.location.pathname;
 	let PesquisaTexto: HTMLInputElement,
@@ -168,7 +168,7 @@ presence.on("UpdateData", async () => {
 		window.getComputedStyle(bodyWrap).getPropertyValue("background-color") !==
 		"rgb(38, 38, 38)"
 	)
-		presenceData.largeImageKey = "logo";
+		presenceData.largeImageKey = "https://i.imgur.com/ruuxS0Z.png";
 
 	const UsuarioTexto = document.querySelector<HTMLElement>(
 		"body > div.wrap > div > header > div.c-sub-header-nav.with-border.hide-sticky-menu > div > div > div.c-modal_item > div > span"

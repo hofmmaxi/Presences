@@ -1,13 +1,13 @@
 const presence = new Presence({
-		clientId: "842486883128705024"
+		clientId: "842486883128705024",
 	}),
 	path = location.pathname,
 	timeElapsed = ~~(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
-		startTimestamp: timeElapsed
+		largeImageKey: "https://i.imgur.com/2S8IXoa.png",
+		startTimestamp: timeElapsed,
 	};
 
 	switch (path.split("/")[1]) {

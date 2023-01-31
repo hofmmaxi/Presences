@@ -1,5 +1,5 @@
 const presence = new Presence({
-		clientId: "798502531847421962"
+		clientId: "798502531847421962",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
@@ -7,7 +7,7 @@ let title: HTMLElement, search: HTMLInputElement;
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "toloka"
+			largeImageKey: "https://i.imgur.com/CZEc0f0.png",
 		},
 		showUseramePM = await presence.getSetting<boolean>("name"),
 		showSearchQuery = await presence.getSetting<boolean>("search");

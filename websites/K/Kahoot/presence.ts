@@ -1,5 +1,5 @@
 const presence = new Presence({
-	clientId: "612793327510749210"
+	clientId: "612793327510749210",
 });
 
 function findRanking(rankingSelector: Element) {
@@ -59,9 +59,9 @@ async function getStrings() {
 			editingKahoot: "kahoot.editingKahoot",
 			previewingKahoot: "kahoot.previewingKahoot",
 			liveCourse: "kahoot.liveCourse",
-			liveCourseActivity: "kahoot.liveCourseActivity"
+			liveCourseActivity: "kahoot.liveCourseActivity",
 		},
-		await presence.getSetting<string>("lang")
+		await presence.getSetting<string>("lang").catch(() => "en")
 	);
 }
 
@@ -75,12 +75,12 @@ let strings: Awaited<ReturnType<typeof getStrings>>,
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "kahoot",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/yrWMYRs.png",
+			startTimestamp: browsingTimestamp,
 		},
 		[buttons, newLang] = await Promise.all([
 			await presence.getSetting<boolean>("buttons"),
-			await presence.getSetting<string>("lang")
+			await presence.getSetting<string>("lang").catch(() => "en"),
 		]);
 
 	oldLang ??= newLang;
@@ -231,8 +231,8 @@ presence.on("UpdateData", async () => {
 							presenceData.buttons = [
 								{
 									label: `${strings.buttonJoinGame.replace("{0}", pin)}`,
-									url: `https://kahoot.it/?pin=${pin}`
-								}
+									url: `https://kahoot.it/?pin=${pin}`,
+								},
 							];
 						}
 					}

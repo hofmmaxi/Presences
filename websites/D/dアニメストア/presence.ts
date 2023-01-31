@@ -1,10 +1,10 @@
 {
 	const presence = new Presence({
-			clientId: "611012705306017792"
+			clientId: "611012705306017792",
 		}),
 		strings = presence.getStrings({
-			play: "presence.playback.playing",
-			pause: "presence.playback.paused"
+			play: "general.playing",
+			pause: "general.paused",
 		});
 
 	presence.on("UpdateData", async () => {
@@ -19,13 +19,13 @@
 						document.querySelector(".backInfoTxt2").textContent
 					}`,
 					state: document.querySelector(".backInfoTxt3").textContent,
-					largeImageKey: "danime",
+					largeImageKey: "https://i.imgur.com/6sp3k8m.png",
 					smallImageKey: isPlaying ? "play" : "pause",
 					smallImageText: isPlaying
 						? (await strings).play
 						: (await strings).pause,
 					startTimestamp:
-						Math.floor(Date.now() / 1000) - Math.floor(video.currentTime)
+						Math.floor(Date.now() / 1000) - Math.floor(video.currentTime),
 				};
 
 			if (!isPlaying) delete presenceData.startTimestamp;

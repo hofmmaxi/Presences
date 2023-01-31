@@ -26,7 +26,7 @@ presence.on("UpdateData", async () => {
 	const incognito = await presence.getSetting<boolean>("incognito"),
 		showTimestamp = await presence.getSetting<boolean>("showTimestamp"),
 		showButtons = await presence.getSetting<boolean>("buttons"),
-		newLang = await presence.getSetting<string>("lang");
+		newLang = await presence.getSetting<string>("lang").catch(() => "en");
 	if (!oldLang || oldLang !== newLang) {
 		oldLang = newLang;
 		strings = await presence.getStrings(
@@ -38,14 +38,14 @@ presence.on("UpdateData", async () => {
 				state: getMeta("state"),
 				smallImageText: getMeta("smallImageText"),
 				button1: getMeta("button_1_Label"),
-				button2: getMeta("button_2_Label")
+				button2: getMeta("button_2_Label"),
 			},
 			oldLang
 		);
 	}
 
 	const presenceData: PresenceData = {
-		largeImageKey: "img_logo"
+		largeImageKey: "https://i.imgur.com/JZWaUA6.png",
 	};
 
 	if (showTimestamp === true) presenceData.startTimestamp = browsingTimestamp;
@@ -75,13 +75,13 @@ presence.on("UpdateData", async () => {
 				if (hasMeta("button_1_Label") && hasMeta("button_1_Url")) {
 					presenceData.buttons.push({
 						label: getMeta("button_1_Label"),
-						url: getMeta("button_1_Url")
+						url: getMeta("button_1_Url"),
 					});
 				}
 				if (hasMeta("button_2_Label") && hasMeta("button_2_Url")) {
 					presenceData.buttons.push({
 						label: getMeta("button_2_Label"),
-						url: getMeta("button_2_Url")
+						url: getMeta("button_2_Url"),
 					});
 				}
 			}

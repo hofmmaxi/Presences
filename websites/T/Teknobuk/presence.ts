@@ -1,8 +1,8 @@
 const presence = new Presence({ clientId: "658192386899312651" }),
 	browsingTimestamp = Math.floor(Date.now() / 1000),
 	presenceData: PresenceData = {
-		largeImageKey: "buk-logo",
-		startTimestamp: browsingTimestamp
+		largeImageKey: "https://i.imgur.com/QK47Q4Y.png",
+		startTimestamp: browsingTimestamp,
 	};
 
 function makeRPC(title: string, category: string): void {
@@ -101,8 +101,8 @@ presence.on("UpdateData", () => {
 
 	if (!presenceData.details) {
 		presence.setActivity({
-			largeImageKey: "buk-logo",
-			details: "Bilinmeyen bir sayfada..."
+			largeImageKey: "https://i.imgur.com/QK47Q4Y.png",
+			details: "Bilinmeyen bir sayfada...",
 		});
 	} else presence.setActivity(presenceData);
 });

@@ -37,10 +37,10 @@ presence.on("UpdateData", async () => {
 				.replace("%artist%", data.now_playing?.song.artist || "Artist")
 				.replace("%songText%", data.now_playing.song.text || "Song")
 				.replace("%title%", data.now_playing?.song.title || "Title"),
-			timestamp: await presence.getSetting<boolean>("timestamp")
+			timestamp: await presence.getSetting<boolean>("timestamp"),
 		},
 		presenceData: PresenceData = {
-			largeImageKey: "logo",
+			largeImageKey: "https://i.imgur.com/Sjj3gx6.png",
 			details: settings.details,
 			state: settings.state,
 			smallImageText: `${
@@ -49,9 +49,9 @@ presence.on("UpdateData", async () => {
 			buttons: [
 				{
 					label: "Tune in",
-					url: "https://cast.bladefm.com.au/radio/8000/radio.mp3"
-				}
-			]
+					url: "https://cast.bladefm.com.au/radio/8000/radio.mp3",
+				},
+			],
 		};
 
 	if (settings.timestamp) presenceData.startTimestamp = timestamp;

@@ -1,14 +1,14 @@
 const presence = new Presence({
-		clientId: "661198037175238665"
+		clientId: "661198037175238665",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", () => {
 	const presenceData: PresenceData = {
-		largeImageKey: "logo",
+		largeImageKey: "https://i.imgur.com/MmTi5zJ.png",
 		smallImageKey: "reading",
 		smallImageText: "Reading Node.js Doc's",
-		startTimestamp: browsingTimestamp
+		startTimestamp: browsingTimestamp,
 	};
 
 	if (document.location.hostname === "nodejs.org") {

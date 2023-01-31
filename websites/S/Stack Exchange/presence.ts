@@ -1,14 +1,15 @@
 const presence = new Presence({
-		clientId: "919817726195814431"
+		clientId: "919817726195814431",
 	}),
 	browsingTimestamp = Math.floor(Date.now() / 1000);
 
 presence.on("UpdateData", async () => {
 	const presenceData: PresenceData = {
-			largeImageKey: "stackexchange",
-			startTimestamp: browsingTimestamp
+			largeImageKey: "https://i.imgur.com/WCho2QO.png",
+			startTimestamp: browsingTimestamp,
 		},
-		{ pathname, hostname } = window.location;
+		{ pathname, hostname, href } = window.location,
+		showButtons = await presence.getSetting<boolean>("buttons");
 
 	switch (hostname) {
 		case "stackexchange.com": {
@@ -18,25 +19,21 @@ presence.on("UpdateData", async () => {
 		case "serverfault.com": {
 			presenceData.largeImageKey = "serverfault";
 			presenceData.details = "Server Fault";
-
 			break;
 		}
 		case "meta.serverfault.com": {
 			presenceData.largeImageKey = "serverfault";
 			presenceData.details = "Server Fault Meta";
-
 			break;
 		}
 		case "superuser.com": {
 			presenceData.largeImageKey = "superuser";
 			presenceData.details = "Super User";
-
 			break;
 		}
 		case "meta.superuser.com": {
 			presenceData.largeImageKey = "superuser";
 			presenceData.details = "Super User Meta";
-
 			break;
 		}
 		default: {
@@ -48,8 +45,15 @@ presence.on("UpdateData", async () => {
 				.querySelector("meta[property='og:site_name']")
 				.getAttribute("content")
 				.replace("Stack Exchange", "");
-			if (pathname.includes("/questions"))
+			if (pathname.includes("/questions")) {
 				presenceData.details = "Reading a question";
+				presenceData.buttons = [
+					{
+						label: "View Question",
+						url: href,
+					},
+				];
+			}
 		}
 	}
 
@@ -59,7 +63,7 @@ presence.on("UpdateData", async () => {
 				"serverfault.com",
 				"meta.serverfault.com",
 				"superuser.com",
-				"meta.superuser.com"
+				"meta.superuser.com",
 			].includes(hostname)
 		)
 			presenceData.state = "Main Page";
@@ -73,11 +77,13 @@ presence.on("UpdateData", async () => {
 			"serverfault.com",
 			"meta.serverfault.com",
 			"superuser.com",
-			"meta.superuser.com"
+			"meta.superuser.com",
 		].includes(hostname)
 	)
 		presenceData.state = "Browsing";
 	else presenceData.details = "Browsing";
+
+	if (!showButtons) delete presenceData.buttons;
 
 	if (presenceData.details) presence.setActivity(presenceData);
 	else presence.setActivity();
